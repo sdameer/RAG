@@ -14,7 +14,7 @@ embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001",output_di
 
 
 db = Chroma(
-    persist_directory=r"C:\\Users\\Syed Ameer Baji\\Desktop\\test\\rags\\1\\chroma_db",
+    persist_directory=r"C:\\Users\\Syed Ameer Baji\\Desktop\\test\\rags\\chroma_db",
     embedding_function=embeddings
 )
 

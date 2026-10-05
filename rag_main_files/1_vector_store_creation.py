@@ -34,6 +34,6 @@ embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001",output_di
 db = Chroma.from_documents(
     documents, 
     embedding=embeddings,
-    persist_directory= "C:\\Users\\Syed Ameer Baji\\Desktop\\test\\rags\\rag_main_files\\data.txt"
+    persist_directory= "C:\\Users\\Syed Ameer Baji\\Desktop\\test\\rags\\chroma_db"
 )
 
