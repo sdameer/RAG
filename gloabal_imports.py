@@ -3,6 +3,8 @@ import warnings
 warnings.filterwarnings('ignore')
 
 from dotenv import load_dotenv
+load_dotenv()
+
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
@@ -18,4 +20,5 @@ from langchain_classic.chains.combine_documents import (
     create_stuff_documents_chain,
 )
 
-load_dotenv()
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnableLambda , RunnableSequence
