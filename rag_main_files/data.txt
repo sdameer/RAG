@@ -102,3 +102,8 @@ Suppose a knowledge base contains information about Python, Machine Learning, Ro
 For a beginner RAG project, a simple pipeline can be understood as: load documents, split documents into chunks, create embeddings, store embeddings in a vector store, retrieve relevant chunks, and send the retrieved context to a language model. Each stage solves a different problem, and understanding the documents can be added, processed into chunks, embedded, and inserted into the retrieval system. This makes RAG useful for documentation assistants, company knowledge bases, educational systems, research assistants, customer support systems, and question-answer purpose of each stage is more important than immediately building a complex system.
 
 RAG is useful because a knowledge base can be updated without retraining the entire language model. New documents can be added, processed into chunks, embedded, and inserted into the retrieval system. This makes RAG useful for documentation assistants, company knowledge bases, educational systems, research assistants, customer support systems, and question-answering applications.
+
+
+My name is dev
+which stands for developer and i am from hyderabad
+and i like to code and love to spend time alone in nature

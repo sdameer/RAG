@@ -18,7 +18,7 @@ db = Chroma(
     embedding_function=embeddings
 )
 
-query = "Retrieval-Augmented Generation (RAG)"
+query = "what is my name "
 
 retriever = db.as_retriever(
     search_type="similarity_score_threshold",
