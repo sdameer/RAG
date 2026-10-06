@@ -1,3 +1,7 @@
+
+My name is dev
+which stands for developer and i am from hyderabad
+and i like to code and love to spend time alone in nature
 Artificial Intelligence (AI)
 Artificial Intelligence, commonly called AI, is a field of computer science focused on creating systems that can perform tasks that normally require human intelligence. These tasks include understanding language, recognizing images, making decisions, solving problems, learning from data, and generating content. AI systems can range from simple rule-based programs to advanced models that learn complex patterns from very large datasets.
 
