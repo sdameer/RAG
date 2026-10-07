@@ -1,7 +1,7 @@
 """
     This is a simple perfectly working RAG pipeline
 """
-
+from neon_db_test import save_chat  , print_chat_history , previous_chat_history
 from langchain_classic.chains.combine_documents import (
     create_stuff_documents_chain,
 )
@@ -99,10 +99,12 @@ question_answer_chain = create_stuff_documents_chain(
 rag_chain = create_retrieval_chain(
     history_aware_retriever, question_answer_chain)
 
+previous_chat_history_of_user = previous_chat_history()
 
 def continual_chat():
     print("Start chatting with the AI! Type 'exit' to end the conversation.")
     chat_history = []
+    chat_history.extend(previous_chat_history_of_user)
     while True:
         query = input("You: ")
         if query.lower() == "exit":
@@ -123,7 +125,13 @@ def continual_chat():
 
         chat_history.append(HumanMessage(content=query))
         chat_history.append(AIMessage(content=result["answer"]))
+        save_chat(
+            query=query,
+            answer=result["answer"]
+            )
+    
 
 
 if __name__ == "__main__":
     continual_chat()
+    print_chat_history()
