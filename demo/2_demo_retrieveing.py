@@ -6,22 +6,28 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 from dotenv import load_dotenv
-from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings # type: ignore
+
+from langchain_qdrant import QdrantVectorStore
+from qdrant_client import QdrantClient
+
+client = QdrantClient(url="http://localhost:6333")
+collection_name = "new_rag_collection"
 
 load_dotenv()
 
 hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-api_key = os.environ["GOOGLE_API_KEY"] 
 
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2",
     model_kwargs={"token": hf_token}
 )
 
-db = Chroma(
-    persist_directory=r"C:\\Users\\Syed Ameer Baji\\Desktop\\test\\rags\\demo\\chroma_db",
-    embedding_function=embeddings
+db = QdrantVectorStore(
+    client=client,
+    collection_name=collection_name,
+    embedding=embeddings,
+
 )
 
 query = "CACHING"

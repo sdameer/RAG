@@ -5,7 +5,13 @@ warnings.filterwarnings("ignore")
 
 from dotenv import load_dotenv
 
-from langchain_community.vectorstores import Chroma
+
+from langchain_qdrant import QdrantVectorStore
+from qdrant_client import QdrantClient
+
+client = QdrantClient(url="http://localhost:6333")
+collection_name = "new_rag_collection"
+
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
@@ -22,7 +28,7 @@ from langchain_classic.chains.combine_documents import (
 
 load_dotenv()
 
-api_key = os.environ["GOOGLE_API_KEY"]
+
 GROQ_API_KEY = os.environ["GROQ_API_KEY"]
 
 hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
@@ -33,7 +39,12 @@ embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2",
     model_kwargs={"token": hf_token}
 )
-db = Chroma(persist_directory=path, embedding_function=embeddings)
+db = QdrantVectorStore(
+    client=client,
+    collection_name=collection_name,
+    embedding=embeddings,
+
+)
 retriever = db.as_retriever(search_type="similarity",search_kwargs={"k": 3},)
 llm = ChatGroq(model="openai/gpt-oss-20b")
 
