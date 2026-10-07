@@ -1,3 +1,7 @@
+"""
+    This is a simple perfectly working RAG pipeline
+"""
+
 import os
 import warnings
 
