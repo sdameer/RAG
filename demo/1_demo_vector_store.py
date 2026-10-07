@@ -12,6 +12,8 @@ from langchain_huggingface import HuggingFaceEmbeddings  # type: ignore
 
 
 load_dotenv()
+
+hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 api_key = os.environ["GOOGLE_API_KEY"] 
 
 if not os.path.exists("C:\\Users\\Syed Ameer Baji\\Desktop\\test\\rags\\demo\\chroma_db"):
@@ -32,9 +34,9 @@ if not os.path.exists("C:\\Users\\Syed Ameer Baji\\Desktop\\test\\rags\\demo\\ch
     documents = text_splitter.split_documents(documents=documents)
 
     # convert to vectors
-    # embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001",output_dimensionality=768, api_key= api_key)
     embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_kwargs={"token": hf_token}
     )
 
     # create vector store

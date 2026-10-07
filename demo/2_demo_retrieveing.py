@@ -10,11 +10,13 @@ from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings # type: ignore
 
 load_dotenv()
+
+hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 api_key = os.environ["GOOGLE_API_KEY"] 
 
-# embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001",output_dimensionality=768, api_key= api_key)
 embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+    model_name="sentence-transformers/all-MiniLM-L6-v2",
+    model_kwargs={"token": hf_token}
 )
 
 db = Chroma(

@@ -1,3 +1,10 @@
+My name is Syed Ameer
+I am a final year student at LIET collage
+and i am backend developers with 5 months of experience 
+i love to write code and build systems 
+i am from hyderabad
+i am CSE AIML student 
+
 TECHNOLOGY KNOWLEDGE BASE
 
 1. ARTIFICIAL INTELLIGENCE
