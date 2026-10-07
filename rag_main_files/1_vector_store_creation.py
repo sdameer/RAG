@@ -23,8 +23,8 @@ documents = loader.load()
 # break down the data ino 200 parts 
 # with each parts last 10 words repeating 
 text_splitter = CharacterTextSplitter(
-    chunk_size = 200,
-    chunk_overlap = 10
+    chunk_size = 400,
+    chunk_overlap = 50
 )
 
 # convert to vectors
