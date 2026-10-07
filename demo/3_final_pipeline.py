@@ -49,7 +49,7 @@ db = QdrantVectorStore(
     embedding=embeddings,
 
 )
-retriever = db.as_retriever(search_type="similarity",search_kwargs={"k": 3},)
+retriever = db.as_retriever(search_type="similarity_score_threshold",search_kwargs={"k": 1,"score_threshold":0.8},)
 llm = ChatGroq(model="openai/gpt-oss-20b")
 
 
@@ -112,7 +112,15 @@ def continual_chat():
         
         result = rag_chain.invoke({"input": query, "chat_history": chat_history})
         
-        print(f"AI: {result['answer']}")
+        print(f"AI: {result['answer']}")        
+        print("\n--- Sources ---")
+
+        for i, doc in enumerate(result["context"], 1):
+            print(f"Source {i}:")
+            print(f"File name   : {doc.metadata.get('file_name')}")
+            print(f"Page number : {doc.metadata.get('page_number')}")
+            print(f"Chunk ID    : {doc.metadata.get('chunk_id')}")
+            print("\n")
         
         chat_history.append(HumanMessage(content=query))
         chat_history.append(SystemMessage(content=result["answer"]))
