@@ -1,0 +1,402 @@
+TECHNOLOGY KNOWLEDGE BASE
+
+1. ARTIFICIAL INTELLIGENCE
+
+Artificial Intelligence (AI) is the field of computer science focused on creating systems that can perform tasks that normally require human intelligence. These tasks include understanding language, recognizing images, making decisions, solving problems, and learning from data.
+
+AI systems can be divided into several broad categories. Narrow AI is designed to perform a specific task, such as image classification, recommendation, speech recognition, or fraud detection. General AI refers to a theoretical system capable of performing a wide range of intellectual tasks at a human-like level.
+
+Machine learning is a major subfield of AI. Instead of explicitly programming every rule, machine learning systems learn patterns from data. A model is trained using examples and then used to make predictions on new data.
+
+Common machine learning approaches include supervised learning, unsupervised learning, and reinforcement learning.
+
+Supervised learning uses labeled data. For example, a model can be trained using thousands of emails labeled as spam or not spam. The model learns patterns associated with each class and predicts the category of new emails.
+
+Unsupervised learning works with data that does not have predefined labels. Clustering is a common example. A system may group customers according to purchasing behavior without being explicitly told what each group represents.
+
+Reinforcement learning involves an agent interacting with an environment. The agent receives rewards or penalties based on its actions and gradually learns a strategy that maximizes long-term reward.
+
+AI is used in search engines, recommendation systems, autonomous vehicles, cybersecurity, healthcare, financial services, robotics, and software development.
+
+
+2. DEEP LEARNING
+
+Deep learning is a subset of machine learning that uses neural networks with multiple layers. These networks can automatically learn increasingly complex representations from data.
+
+A neural network typically contains an input layer, one or more hidden layers, and an output layer. Each connection between neurons has a weight. During training, the model adjusts these weights to reduce the difference between its predictions and the expected outputs.
+
+The process of calculating a prediction is called forward propagation. The model's error is measured using a loss function. Backpropagation calculates how much each parameter contributed to the error, and an optimization algorithm updates the parameters.
+
+Gradient descent is one of the most common optimization methods. It updates model parameters in the direction that reduces the loss.
+
+Convolutional Neural Networks (CNNs) are commonly used for image-related tasks. CNNs can learn features such as edges, textures, shapes, and eventually higher-level objects.
+
+Recurrent Neural Networks (RNNs) were designed to process sequential information. Variants such as LSTM and GRU were developed to better handle long-term dependencies.
+
+Transformers became highly influential because they can process relationships between tokens using attention mechanisms. They are widely used in modern language models and increasingly in vision, audio, and multimodal systems.
+
+
+3. GENERATIVE AI
+
+Generative AI refers to artificial intelligence systems that can generate new content. The generated content may include text, images, audio, video, or computer code.
+
+Large Language Models (LLMs) are a major category of generative AI systems. They are trained on large collections of text and learn statistical relationships between tokens.
+
+An LLM generates text by predicting likely next tokens based on the input context. Although the underlying process is based on probability, large models can demonstrate capabilities such as summarization, question answering, reasoning, translation, and code generation.
+
+Popular applications of generative AI include chatbots, coding assistants, document analysis, content generation, customer support, and information retrieval.
+
+A major limitation of LLMs is that they may generate incorrect information. This behavior is commonly called hallucination. A model may produce an answer that sounds confident even when the information is inaccurate.
+
+Another limitation is that an LLM's knowledge may not contain private company information or newly created documents. Retrieval-Augmented Generation can help address this problem.
+
+
+4. LARGE LANGUAGE MODELS
+
+A Large Language Model (LLM) is a neural network trained on a large amount of text data. Modern LLMs are commonly based on the Transformer architecture.
+
+Before training, text is converted into tokens. A tokenizer breaks text into smaller units that the model can process. Depending on the tokenizer, a token may represent a complete word, part of a word, punctuation, or another text unit.
+
+During pretraining, the model learns patterns from large datasets. A common training objective is next-token prediction. Given a sequence of tokens, the model attempts to predict the next token.
+
+After pretraining, models may undergo additional training to make them more useful for following instructions and interacting with users.
+
+LLMs have a context window that determines how much information can be processed in a single request. Larger context windows allow applications to provide more documents or conversation history to the model, although sending more information can increase computational cost.
+
+Temperature is a generation parameter that influences randomness. Lower temperatures generally produce more predictable outputs, while higher temperatures can produce more varied outputs.
+
+LLMs are useful for conversational systems, document summarization, code generation, classification, extraction, and question answering.
+
+
+5. RETRIEVAL-AUGMENTED GENERATION
+
+Retrieval-Augmented Generation (RAG) is an architecture that combines information retrieval with text generation.
+
+A basic RAG system has two major stages: retrieval and generation.
+
+During retrieval, the user's question is converted into an embedding and compared with embeddings stored in a vector database. The system selects documents or chunks that are semantically related to the question.
+
+During generation, the retrieved information is provided to a language model as context. The model uses this context to generate an answer.
+
+RAG is useful when an application needs to answer questions about private or frequently changing information.
+
+A typical RAG pipeline contains document loading, text splitting, embedding generation, vector storage, retrieval, prompt construction, and response generation.
+
+Documents are usually divided into smaller chunks before embedding. Chunking allows the system to retrieve relevant sections rather than sending an entire large document to the language model.
+
+Chunk size is an important design choice. Very small chunks may lose important context, while extremely large chunks may contain too much unrelated information.
+
+Chunk overlap allows neighboring chunks to share some text. This can reduce the chance of important information being split between two chunks.
+
+RAG does not retrain the language model every time new documents are added. Instead, new documents can be processed and their embeddings can be stored in the retrieval system.
+
+
+6. VECTOR DATABASES
+
+A vector database is designed to store and search numerical vector representations of data.
+
+An embedding model converts text, images, or other information into vectors. Similar pieces of information tend to have vectors that are close to each other according to a chosen similarity measure.
+
+Vector databases allow applications to perform semantic search. Instead of matching only exact keywords, semantic search attempts to find content with similar meaning.
+
+Common vector databases and vector search systems include Qdrant, Chroma, Pinecone, Weaviate, and Milvus.
+
+Qdrant is a vector search engine that stores vectors along with associated payload data. Payloads can contain metadata such as document IDs, filenames, user IDs, or categories.
+
+Metadata filtering can be combined with vector similarity. For example, a system could search for documents semantically related to a question while restricting results to documents belonging to a particular user.
+
+Vector databases are commonly used in RAG systems, recommendation systems, semantic search engines, image search, and document retrieval.
+
+
+7. EMBEDDINGS
+
+An embedding is a numerical representation of information.
+
+Text embedding models convert text into vectors containing many numerical values. The vector attempts to capture semantic characteristics of the text.
+
+For example, the sentences "A car is parked outside" and "There is an automobile near the building" use different words but have similar meanings. A good embedding model should represent these sentences with relatively similar vectors.
+
+Embeddings can be compared using similarity measures such as cosine similarity.
+
+Cosine similarity measures the angle between two vectors. A value closer to 1 generally indicates that the vectors point in similar directions, while a value closer to -1 indicates opposite directions.
+
+Embedding quality strongly affects retrieval quality in a RAG application. If the embedding model does not represent the meaning of the application's data well, the retriever may return irrelevant documents.
+
+Embedding models are used for semantic search, recommendation systems, clustering, document retrieval, duplicate detection, and classification.
+
+
+8. SOFTWARE DEVELOPMENT
+
+Software development is the process of designing, building, testing, deploying, and maintaining software applications.
+
+A typical software development lifecycle includes requirements gathering, design, implementation, testing, deployment, and maintenance.
+
+Version control systems allow developers to track changes to source code. Git is one of the most widely used version control systems.
+
+A Git repository stores the history of a project. Developers can create branches to work on features independently and later merge their changes.
+
+Continuous Integration and Continuous Deployment practices automate parts of software development. Continuous Integration can automatically build and test code whenever changes are pushed.
+
+Automated testing helps developers detect regressions. Unit tests focus on individual functions or components, while integration tests verify that multiple components work correctly together.
+
+Code reviews allow developers to inspect changes before they are merged into the main codebase. Reviews can identify bugs, security problems, maintainability issues, and opportunities for improvement.
+
+
+9. BACKEND DEVELOPMENT
+
+Backend development focuses on the server-side logic of an application.
+
+A backend commonly handles authentication, authorization, business logic, database operations, file processing, background tasks, and communication with external services.
+
+REST APIs are a common way for frontend applications and other clients to communicate with backend services.
+
+An API endpoint represents a particular operation or resource. HTTP methods such as GET, POST, PUT, PATCH, and DELETE are commonly used to represent different operations.
+
+GET is generally used to retrieve data. POST is commonly used to create resources. PUT and PATCH are used for updates, while DELETE is used to remove resources.
+
+Authentication determines who a user is. Authorization determines what an authenticated user is allowed to do.
+
+JSON is widely used as a data format for APIs because it is lightweight and supported by many programming languages.
+
+Backend applications often use relational databases such as PostgreSQL or MySQL. Databases store structured application data and provide mechanisms for querying and updating that data.
+
+
+10. DATABASES
+
+A database is a system used to store, organize, retrieve, and manage data.
+
+Relational databases store data in tables containing rows and columns. Tables can be connected using relationships.
+
+A primary key uniquely identifies a record in a table. A foreign key creates a relationship between records in different tables.
+
+SQL is used to interact with relational databases. Common SQL operations include SELECT, INSERT, UPDATE, and DELETE.
+
+Indexes can improve query performance by allowing the database to locate records more efficiently. However, indexes also consume storage and can increase the cost of write operations.
+
+Transactions allow multiple database operations to be treated as a single logical unit. If an operation fails, the transaction can be rolled back.
+
+Database normalization is a technique used to organize relational data and reduce unnecessary duplication.
+
+PostgreSQL is a powerful open-source relational database commonly used in web applications, analytics systems, and enterprise software.
+
+
+11. CACHING
+
+Caching is the process of temporarily storing frequently accessed data so that future requests can be served faster.
+
+Without caching, an application may repeatedly perform expensive database queries or calculations.
+
+Redis is an in-memory data store commonly used for caching, session storage, queues, rate limiting, and real-time application features.
+
+For example, an application may cache the result of a frequently requested product query for 60 seconds. During that period, repeated requests can be served from Redis instead of querying the database each time.
+
+Caching improves performance but introduces additional complexity. Cached data can become outdated, so applications need appropriate expiration and invalidation strategies.
+
+A cache hit occurs when the requested data is already available in the cache. A cache miss occurs when the application needs to retrieve the data from its original source.
+
+
+12. MESSAGE QUEUES AND BACKGROUND TASKS
+
+Background task systems allow applications to execute time-consuming work outside the main request-response cycle.
+
+For example, generating embeddings for a large document may take several seconds or minutes. Performing this work directly inside an HTTP request can cause slow responses.
+
+A queue allows work to be placed into a waiting list. Workers consume tasks from the queue and execute them asynchronously.
+
+Celery is a popular distributed task queue for Python applications. Redis and RabbitMQ can be used as message brokers for Celery.
+
+Typical background tasks include sending emails, processing uploaded files, generating reports, resizing images, running AI pipelines, and processing large datasets.
+
+Background processing improves user experience because the application can return a response immediately while the expensive operation continues in the background.
+
+
+13. DOCKER
+
+Docker is a platform used to package applications and their dependencies into containers.
+
+A container provides an isolated environment in which an application can run consistently across different systems.
+
+A Dockerfile contains instructions for building a Docker image. An image is a packaged template containing the application, dependencies, and required runtime environment.
+
+A container is a running instance of an image.
+
+Docker Compose can be used to define and run multiple related containers. For example, a Django application, PostgreSQL database, Redis server, and Qdrant service can be configured as separate containers.
+
+Containers are useful because developers can avoid many environment-specific problems. Instead of manually installing every dependency, the required environment can be described in configuration files.
+
+Docker is commonly used in local development, testing, CI/CD pipelines, and cloud deployments.
+
+
+14. CLOUD COMPUTING
+
+Cloud computing provides computing resources over the internet.
+
+Cloud platforms allow organizations to use servers, databases, storage, networking, and other infrastructure without maintaining all physical hardware themselves.
+
+Cloud services are commonly divided into Infrastructure as a Service, Platform as a Service, and Software as a Service.
+
+Infrastructure as a Service provides resources such as virtual machines and storage. Platform as a Service provides managed environments for deploying applications. Software as a Service provides complete applications to users.
+
+Cloud computing offers scalability. An application can increase its computing resources when traffic grows and reduce them when demand decreases.
+
+Common cloud providers include Amazon Web Services, Microsoft Azure, and Google Cloud.
+
+
+15. API DESIGN
+
+Good API design makes backend systems easier to use, maintain, and integrate.
+
+RESTful APIs commonly organize information around resources. For example, an application may expose endpoints for users, products, orders, and messages.
+
+HTTP status codes communicate the result of a request. A 200 status usually indicates success, while 201 commonly indicates successful resource creation.
+
+A 400-level response usually indicates a client-side problem. A 401 response indicates that authentication is required or invalid. A 403 response indicates that the client is authenticated but does not have permission. A 404 response indicates that the requested resource was not found.
+
+A 500-level response generally indicates a server-side problem.
+
+Pagination is used when an endpoint can return a large number of records. Instead of returning thousands of records at once, the API returns a limited number per request.
+
+API versioning can help maintain compatibility when an API changes significantly.
+
+
+16. AUTHENTICATION AND SECURITY
+
+Authentication verifies the identity of a user. Authorization determines what that user is allowed to access.
+
+Password-based authentication should never store plain-text passwords. Passwords should be securely hashed using appropriate password hashing algorithms.
+
+JSON Web Tokens, commonly called JWTs, are often used for stateless API authentication.
+
+OAuth is a standard that allows applications to obtain limited access to resources without requiring users to share their passwords with the application.
+
+HTTPS encrypts communication between clients and servers and helps protect sensitive information while it travels across a network.
+
+Common web security threats include SQL injection, cross-site scripting, cross-site request forgery, broken authentication, and insecure authorization.
+
+Applications should validate user input, enforce permissions, protect secrets, use secure communication, and avoid exposing sensitive information in API responses.
+
+
+17. WEBSOCKETS AND REAL-TIME APPLICATIONS
+
+Traditional HTTP communication generally follows a request-response model. The client sends a request and the server sends a response.
+
+WebSockets provide a persistent communication channel between a client and server. Both sides can send messages after the connection has been established.
+
+WebSockets are useful for chat applications, notifications, multiplayer games, live dashboards, collaborative tools, and real-time status updates.
+
+A typical chat application may use HTTP APIs for authentication and retrieving historical messages, while WebSockets are used for delivering new messages instantly.
+
+Real-time systems often require additional components such as Redis for managing state or coordinating communication across multiple server instances.
+
+
+18. MICROSERVICES
+
+A microservices architecture divides an application into multiple smaller services.
+
+Each service is responsible for a particular business capability. For example, an e-commerce system may contain separate services for users, payments, orders, inventory, and notifications.
+
+Microservices can allow teams to develop and deploy services independently.
+
+However, microservices also introduce complexity. Services need to communicate over networks, failures can occur between services, and monitoring becomes more important.
+
+A monolithic application keeps most or all business functionality in a single deployable application.
+
+Neither architecture is automatically better. The appropriate architecture depends on the size, requirements, team structure, and operational needs of the system.
+
+
+19. SOFTWARE ARCHITECTURE
+
+Software architecture describes the major components of a software system and how those components interact.
+
+A common backend architecture separates responsibilities into layers such as API handling, business logic, data access, and database storage.
+
+Separation of concerns makes applications easier to understand and maintain.
+
+A system should have clear responsibilities for each component. For example, an API layer can validate requests while a service layer handles business rules.
+
+Scalability refers to the ability of a system to handle increasing workload.
+
+Horizontal scaling means adding more instances of an application. Vertical scaling means increasing the resources of an existing machine.
+
+Load balancers can distribute incoming requests across multiple application servers.
+
+
+20. OBSERVABILITY
+
+Observability helps developers understand what is happening inside a running application.
+
+The three commonly discussed pillars of observability are logs, metrics, and traces.
+
+Logs record events that occur inside an application. They can contain information about errors, requests, user actions, or system events.
+
+Metrics are numerical measurements such as CPU usage, memory consumption, request count, request latency, and error rate.
+
+Distributed tracing tracks a request as it moves through multiple services.
+
+Monitoring and observability are important because an application can appear healthy while individual components may be experiencing errors or performance problems.
+
+Good observability helps developers detect problems, investigate failures, and understand system performance.
+
+
+21. CYBERSECURITY
+
+Cybersecurity focuses on protecting systems, networks, applications, and data from unauthorized access and attacks.
+
+Authentication and authorization are fundamental security controls.
+
+Encryption protects information by transforming it into a form that unauthorized users cannot easily understand.
+
+Symmetric encryption uses the same key for encryption and decryption. Asymmetric encryption uses a pair of related keys, commonly called a public key and private key.
+
+Hashing is different from encryption. A cryptographic hash function converts input into a fixed-size output and is designed to be difficult to reverse.
+
+Security practices should include strong authentication, least-privilege access, secure password storage, input validation, regular dependency updates, and careful secret management.
+
+Developers should avoid storing API keys and passwords directly in source code. Environment variables or dedicated secret management systems can be used instead.
+
+
+22. MACHINE LEARNING IN PRODUCTION
+
+Deploying a machine learning model involves more than training the model.
+
+A production ML system may need data pipelines, model storage, APIs, monitoring, versioning, and infrastructure.
+
+A trained model can be exposed through an API so that applications can send input and receive predictions.
+
+Model monitoring can detect changes in input data or prediction behavior.
+
+Data drift occurs when the distribution of incoming data changes over time. For example, a fraud detection model trained on historical transactions may become less effective if customer behavior changes.
+
+Model versioning allows teams to track which model generated a particular prediction.
+
+Machine learning systems often require periodic retraining when new data becomes available.
+
+
+23. AI AGENTS
+
+An AI agent is a system that can use a language model together with tools, memory, and decision-making logic to perform tasks.
+
+A simple chatbot primarily generates responses. An agent can decide to call tools such as search engines, databases, calculators, APIs, or other software.
+
+For example, a travel assistant might use a language model to understand a request, search for flights, retrieve hotel information, compare options, and generate a final response.
+
+Agent systems can use workflows to control the sequence of operations.
+
+Tool calling allows a language model to request structured operations from external systems.
+
+Agentic systems can be useful for automation, research, customer support, data analysis, and software development.
+
+
+24. FUTURE OF TECHNOLOGY
+
+Technology continues to evolve through advances in artificial intelligence, cloud computing, robotics, cybersecurity, distributed systems, and hardware.
+
+AI is increasingly being integrated into traditional software applications rather than existing only as standalone products.
+
+Future software systems are likely to combine conventional backend services with AI models, retrieval systems, databases, and automated workflows.
+
+Developers will increasingly need to understand how different components work together rather than focusing on a single technology.
+
+Fundamental concepts such as algorithms, databases, networking, operating systems, APIs, security, and software architecture remain important even as specific frameworks and AI models change.
+
+The ability to learn new technologies and build reliable systems is therefore an important skill for software engineers.
