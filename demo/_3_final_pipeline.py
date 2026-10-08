@@ -45,8 +45,8 @@ db = QdrantVectorStore(
 retriever = db.as_retriever(
     search_type="similarity_score_threshold", 
     search_kwargs={
-        "k": 1, 
-        "score_threshold": 0.8
+        "k": 4, 
+        "score_threshold": 0.65
         },
     )
 llm = ChatGroq(model="openai/gpt-oss-20b")

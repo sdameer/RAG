@@ -1,0 +1,173 @@
+[{
+        "user_input": "How many layers are there in the Transformer encoder?",
+        "reference": "The Transformer encoder is composed of a stack of 6 identical layers.",
+        "reference_contexts": [
+            "The encoder is composed of a stack of N = 6 identical layers. Each layer has two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position-wise fully connected feed-forward network."
+        ],
+        "_source": "attention.pdf - Page 2"
+    },
+    {
+        "user_input": "What pairs does the attention mechanism contain?",
+        "reference": "The attention mechanism maps a query and a set of key-value pairs to an output.",
+        "reference_contexts": [
+            "An attention function can be described as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors."
+        ],
+        "_source": "attention.pdf - Page 3"
+    },
+    {
+        "user_input": "What do we convert into embeddings in the Transformer?",
+        "reference": "Learned embeddings are used to convert the input and output tokens into vectors of dimension dmodel.",
+        "reference_contexts": [
+            "We use learned embeddings to convert the input tokens and output tokens to vectors of dimension dmodel."
+        ],
+        "_source": "attention.pdf - Page 5"
+    },
+    {
+        "user_input": "On what GPU model was the Transformer trained and what optimizer was used?",
+        "reference": "The Transformer was trained on 8 NVIDIA P100 GPUs, and the Adam optimizer was used.",
+        "reference_contexts": [
+            "We trained our models on one machine with 8 NVIDIA P100 GPUs.",
+            "We used the Adam optimizer."
+        ],
+        "_source": "attention.pdf - Page 7"
+    },
+    {
+        "user_input": "What activation function was used in the Transformer feed-forward network?",
+        "reference": "The ReLU activation function was used.",
+        "reference_contexts": [
+            "This consists of two linear transformations with a ReLU activation in between."
+        ],
+        "_source": "attention.pdf - Page 5"
+    },
+
+    {
+        "user_input": "What is the main idea behind BERT's bidirectional representations?",
+        "reference": "BERT pre-trains deep bidirectional representations by jointly conditioning on both left and right context in all layers.",
+        "reference_contexts": [
+            "BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers."
+        ],
+        "_source": "bert.pdf - Page 1"
+    },
+    {
+        "user_input": "What is the masked language model objective used by BERT?",
+        "reference": "The masked language model randomly masks some input tokens and trains BERT to predict the original tokens using their surrounding context. BERT masks 15% of WordPiece tokens during pre-training.",
+        "reference_contexts": [
+            "We mask some percentage of the input tokens at random, and then predict those masked tokens. In all of our experiments, we mask 15% of all WordPiece tokens in each sequence at random."
+        ],
+        "_source": "bert.pdf - Page 5"
+    },
+    {
+        "user_input": "What are the two unsupervised tasks used to pre-train BERT?",
+        "reference": "BERT is pre-trained using Masked Language Modeling (MLM) and Next Sentence Prediction (NSP).",
+        "reference_contexts": [
+            "Instead, we pre-train BERT using two unsupervised tasks, described in this section.",
+            "In addition to the masked language model, we also use a next sentence prediction task that jointly pre-trains text-pair representations."
+        ],
+        "_source": "bert.pdf - Page 4"
+    },
+    {
+        "user_input": "What are the main differences between BERTBASE and BERTLARGE?",
+        "reference": "BERTBASE has 12 layers, a hidden size of 768, 12 attention heads, and 110 million parameters. BERTLARGE has 24 layers, a hidden size of 1024, 16 attention heads, and 340 million parameters.",
+        "reference_contexts": [
+            "BERTBASE (L=12, H=768, A=12, Total Parameters=110M) and BERTLARGE (L=24, H=1024, A=16, Total Parameters=340M)."
+        ],
+        "_source": "bert.pdf - Page 3"
+    },
+    {
+        "user_input": "How does BERT handle sentence pairs in its input representation?",
+        "reference": "BERT separates sentence pairs using the [SEP] token and uses learned segment embeddings to indicate whether each token belongs to sentence A or sentence B.",
+        "reference_contexts": [
+            "We separate them with a special token ([SEP]). Second, we add a learned embedding to every token indicating whether it belongs to sentence A or sentence B."
+        ],
+        "_source": "bert.pdf - Page 3"
+    },
+
+    {
+        "user_input": "Why are CNNs particularly suitable for image pattern recognition?",
+        "reference": "CNNs encode image-specific features into their architecture, making them well suited for image-focused pattern recognition while reducing the number of required parameters.",
+        "reference_contexts": [
+            "CNNs are primarily used in the field of pattern recognition within images. This allows us to encode image-specific features into the architecture, making the network more suited for image-focused tasks whilst further reducing the parameters required."
+        ],
+        "_source": "cnn.pdf - Page 3"
+    },
+    {
+        "user_input": "What are the three main types of layers in a CNN?",
+        "reference": "The three main types of CNN layers are convolutional layers, pooling layers, and fully-connected layers.",
+        "reference_contexts": [
+            "CNNs are comprised of three types of layers. These are convolutional layers, pooling layers and fully-connected layers."
+        ],
+        "_source": "cnn.pdf - Page 4"
+    },
+    {
+        "user_input": "What is the purpose of a pooling layer in a CNN?",
+        "reference": "A pooling layer reduces the dimensionality of the representation, which reduces the number of parameters and computational complexity while maintaining the depth of the activation volume.",
+        "reference_contexts": [
+            "Pooling layers aim to gradually reduce the dimensionality of the representation, and thus further reduce the number of parameters and the computational complexity of the model.",
+            "Max-pooling with a 2 × 2 kernel and stride of 2 scales the activation map down to 25% of its original size while maintaining the depth."
+        ],
+        "_source": "cnn.pdf - Page 8"
+    },
+    {
+        "user_input": "What are stride and zero-padding used for in convolutional layers?",
+        "reference": "Stride controls how the receptive field moves across the input and affects the spatial dimensions of the output. Zero-padding adds padding around the input border to control the dimensionality of the output.",
+        "reference_contexts": [
+            "We are also able to define the stride in which we set the depth around the spatial dimensionality of the input in order to place the receptive field.",
+            "Zero-padding is the simple process of padding the border of the input, and is an effective method to give further control as to the dimensionality of the output volumes."
+        ],
+        "_source": "cnn.pdf - Page 7"
+    },
+    {
+        "user_input": "What is parameter sharing in a CNN and why is it useful?",
+        "reference": "Parameter sharing means using the same weights and bias for an activation map across different spatial regions, greatly reducing the number of parameters in the convolutional layer.",
+        "reference_contexts": [
+            "If we constrain each individual activation map within the output volume to the same weights and bias, then we will see a massive reduction in the number of parameters being produced by the convolutional layer."
+        ],
+        "_source": "cnn.pdf - Page 7"
+    },
+
+    {
+        "user_input": "Why were LSTM networks introduced as an improvement over standard RNNs?",
+        "reference": "Standard RNNs are limited in how far they can look back because the recurrent signal can vanish or explode. LSTMs address this limitation and can learn dependencies over much longer time periods.",
+        "reference_contexts": [
+            "RNNs are limited to look back in time for approximately ten timesteps. This is due to the fed back signal being either vanishing or exploding. This issue was addressed with Long Short-Term Memory Recurrent Neural Networks (LSTM-RNN).",
+            "LSTM networks are capable to learn more than 1,000 timesteps, depending on the complexity of the built network."
+        ],
+        "_source": "lstm.pdf - Page 1"
+    },
+    {
+        "user_input": "What is a perceptron and how does it produce its output?",
+        "reference": "A perceptron takes real-valued inputs, applies weights and a bias, and produces a Boolean output based on whether the resulting value exceeds a threshold.",
+        "reference_contexts": [
+            "The perceptron takes a vector of real-valued input values, all of which are weighted by a multiplier.",
+            "The perceptron outputs y; which is computed by the formula y = 1 if the weighted sum plus bias is greater than 0; −1 otherwise."
+        ],
+        "_source": "lstm.pdf - Page 3"
+    },
+    {
+        "user_input": "What does linear separability mean in the context of a perceptron?",
+        "reference": "A problem is linearly separable when its classes can be separated by a linear decision boundary. A single perceptron can learn only linearly separable functions, such as AND and OR, but not XOR.",
+        "reference_contexts": [
+            "Single perceptrons are limited to learning only functions that are linearly separable.",
+            "The OR function is linearly separable, whereas the XOR function is not."
+        ],
+        "_source": "lstm.pdf - Page 4"
+    },
+    {
+        "user_input": "What is the main difference between the perceptron learning rule and the delta learning rule?",
+        "reference": "The perceptron learning rule updates weights based on classification errors, while the delta learning rule uses gradient descent and can handle both linearly separable and non-separable training examples.",
+        "reference_contexts": [
+            "The delta learning rule was specifically designed to handle linearly separable and linearly non-separable training examples.",
+            "The modification of weights is achieved by using the gradient optimisation descent algorithm."
+        ],
+        "_source": "lstm.pdf - Page 5"
+    },
+    {
+        "user_input": "How does backpropagation train a multilayer feed-forward neural network?",
+        "reference": "Backpropagation uses gradient descent to learn network weights by propagating inputs forward, calculating the error, and propagating the error backward to update the weights and biases.",
+        "reference_contexts": [
+            "The most common neural network learning technique is the error backpropagation algorithm. It uses gradient descent to learn the weights in multilayer networks.",
+            "Starting from the output layer, the algorithm compares the network output with the corresponding desired target output."
+        ],
+        "_source": "lstm.pdf - Page 8"
+    }
+]
